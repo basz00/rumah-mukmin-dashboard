@@ -16,7 +16,7 @@ const ReservationTable = () => {
   const [sorting, setSorting] = useState<SortingState>([
     { id: "reservationTime", desc: true },
   ]);
-  const { data, error, loading } = useFetchReservationUseCase();
+  const { data } = useFetchReservationUseCase();
 
   const renderFilterByDate = () => {
     const columnId = "reservationDatetime";
