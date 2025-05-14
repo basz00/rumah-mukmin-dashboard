@@ -22,7 +22,7 @@ const ReservationTable = () => {
     },
   ]);
   const [sorting, setSorting] = useState<SortingState>([
-    { id: "reservationTime", desc: true },
+    { id: "reservationTime", desc: false },
   ]);
   const [selectedReservation, setSelectedReservation] = useState<
     Reservation | undefined
