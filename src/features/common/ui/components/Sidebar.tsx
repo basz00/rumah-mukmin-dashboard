@@ -13,11 +13,11 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 z-10 h-screen w-16 bg-white md:w-56">
-      <div className="mb-8 px-1 py-1">
+    <div className="fixed top-0 left-0 z-10 h-screen w-16 bg-gray-100 md:w-56">
+      <div className="mb-8 p-4">
         <img
           src="/logo.png"
-          className="hidden w-auto rounded bg-indigo-500 md:flex"
+          className="hidden w-auto rounded bg-indigo-500 p-1 md:flex"
         />
         <img
           src="/logo-mini.png"
