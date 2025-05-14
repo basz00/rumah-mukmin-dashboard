@@ -25,7 +25,7 @@ export const columns = [
     cell: (info) => reservationServicesMapper(info.getValue()),
   }),
   columnHelper.accessor("therapyExperience", {
-    header: () => <div className="flex-1 text-center">Pengalaman</div>,
+    header: () => <div className="flex-1 text-center">Pengalaman Terapi</div>,
     cell: (info) => (
       <div className="flex justify-center">{info.getValue()}</div>
     ),

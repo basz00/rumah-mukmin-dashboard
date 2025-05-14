@@ -11,7 +11,7 @@ const ReservationDetail = ({ item }: Props) => {
     return (
       <div className="flex flex-col">
         <p className="text-xs">{label}</p>
-        <p className="font-bold">{value ?? "-"}</p>
+        <p className="font-bold break-words">{value ?? "-"}</p>
       </div>
     );
   };
@@ -47,11 +47,13 @@ const ReservationDetail = ({ item }: Props) => {
       </div>
 
       <div className="flex flex-col gap-1">
-        {renderItem("Kategori", item.registrationCategory)}{" "}
+        {renderItem("Komplain", item.complaint)}
         {renderItem(
           "Layanan Reservasi",
           reservationServicesMapper(item.reservationServices),
         )}
+        {renderItem("Kategori", item.registrationCategory)}{" "}
+        {renderItem("Pengalaman Terapi", item.therapyExperience)}
       </div>
 
       <div className="flex flex-col gap-1">
