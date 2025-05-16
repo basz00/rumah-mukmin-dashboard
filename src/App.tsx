@@ -3,13 +3,12 @@ import createApolloClient from "@/graphql";
 import { Reservation } from "@/reservation/presentation/ui";
 import { ApolloProvider } from "@apollo/client";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { useHostState } from "./features/common/config";
 
 const App = () => {
-  const { hostUrl } = useHostState();
+  // const { hostUrl } = useHostState();
 
   return (
-    <ApolloProvider client={createApolloClient(hostUrl)}>
+    <ApolloProvider client={createApolloClient()}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

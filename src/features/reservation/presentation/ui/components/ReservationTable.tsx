@@ -27,7 +27,7 @@ const ReservationTable = () => {
   const [selectedReservation, setSelectedReservation] = useState<
     Reservation | undefined
   >(undefined);
-  const { data } = useFetchReservationUseCase();
+  const { data, loading } = useFetchReservationUseCase();
 
   const renderFilterByDate = () => {
     const columnId = "reservationDatetime";
@@ -74,16 +74,20 @@ const ReservationTable = () => {
     <div className="flex h-full flex-col gap-4">
       <div>{renderFilterByDate()}</div>
       <div className="flex-1 overflow-auto">
-        <Table<Reservation>
-          data={data}
-          columns={columns}
-          columnFilterState={columnFilters}
-          sorting={sorting}
-          setSorting={setSorting}
-          onRowClick={(row) => {
-            setSelectedReservation(row);
-          }}
-        />
+        {loading ? (
+          <p className="text-center text-2xl">Loading...</p>
+        ) : (
+          <Table<Reservation>
+            data={data}
+            columns={columns}
+            columnFilterState={columnFilters}
+            sorting={sorting}
+            setSorting={setSorting}
+            onRowClick={(row) => {
+              setSelectedReservation(row);
+            }}
+          />
+        )}
       </div>
       {renderDetailDialog()}
     </div>
